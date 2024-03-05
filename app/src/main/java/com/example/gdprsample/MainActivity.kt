@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
@@ -78,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
                 val adRequest = AdRequest.Builder().build()
 
-                InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+                InterstitialAd.load(this,"ca-app-pub-3940256099942544~3347511713", adRequest, object : InterstitialAdLoadCallback() {
                     override fun onAdFailedToLoad(adError: LoadAdError) {
                         adError.toString().let { Log.d(TAG, it) }
                         mInterstitialAd = null
@@ -138,7 +139,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun displayAds() {
+    fun displayAds(view: View) {
         showAds()
     }
+
+
 }
